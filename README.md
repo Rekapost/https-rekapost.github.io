@@ -10,10 +10,18 @@ Hello, I'm **Reka Srimurugan**, a passionate Automation Tester based in Argyle, 
 
 
 ## 🔧 Technologies I'm familiar with:
-- Selenium, Java
-- RestAssured, Git, Github
-- Jenkins, Github Actions
-- Grafana K6, Docker
+-	Automation Tools: Selenium WebDriver, REST Assured, Postman, Playwright, LambdaTest
+-	Languages: Java
+-	API Testing: Postman, REST Assured, Apidog
+-	Frameworks: TestNG, JUnit, Cucumber (BDD), Data-Driven Testing, Page Object Model (POM)
+-	Version Control: Git, GitHub
+-	CI/CD Tools: Jenkins, Maven, Docker, Kubernetes
+-	Cloud Platforms: AWS, Azure
+-	Testing Platforms: Cross-Browser Testing, Parallel Test Execution, LambdaTest
+-	Reporting Tools: Extent Reports, Allure Reports, Cucumber HTML Reports, ChainTest Reports
+-	Logging: Log4j
+-	Project Management Tools: Trello, JIRA (Agile Methodology)
+-	Databases: PostgreSQL, SQL (DDL, DML)
 
 Feel free to check out my repositories, or get in touch with me through the links above!
 
