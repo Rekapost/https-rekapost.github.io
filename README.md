@@ -5,7 +5,7 @@ Hello, I'm **Reka Srimurugan**, a passionate Automation Tester based in Argyle, 
 
 ## 📌 Quick Links
 - **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/reka-srimurugan-040296252/)
-- **GitHub**: [GitHub Profile](https://github.com/Rekapost))
+- **GitHub**: [GitHub Profile](https://github.com/Rekapost)
 - **Portfolio**: [My Portfolio](https://github.com/Rekapost/https-rekapost.github.io)
 
 
