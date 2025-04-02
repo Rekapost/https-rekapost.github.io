@@ -10,7 +10,7 @@ Hello, I'm **Reka Srimurugan**, a passionate Automation Tester based in Argyle, 
 
 
 ## 🔧 Technologies I'm familiar with:
--	**Automation Tools**: Selenium WebDriver, REST Assured, Postman, Playwright, LambdaTest
+-	**Automation Tools**: Selenium WebDriver, REST Assured, Postman, LambdaTest
 -	**Languages**: Java
 -	**API Testing**: Postman, REST Assured, Apidog
 -	**Frameworks**: TestNG, JUnit, Cucumber (BDD), Data-Driven Testing, Page Object Model (POM)
