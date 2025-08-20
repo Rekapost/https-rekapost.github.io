@@ -1,97 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reka - QA Automation Engineer | SDET | API & Web Test Automation Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reka's Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.light {
+      background: #f9f9f9;
+      color: #333;
+    }
+    body.dark {
+      background: #121212;
+      color: #f9f9f9;
+    }
+    header {
+      position: relative;
+      height: 300px;
+      text-align: center;
+      overflow: hidden;
+    }
+    header h1 {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      font-size: 3rem;
+      padding-top: 100px;
+    }
+    header p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    #wordcloud {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .skills, .projects {
+      margin: 2rem 0;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .skill {
+      background: rgba(0,0,0,0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .dark .skill {
+      background: rgba(255,255,255,0.1);
+    }
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+    .projects .project {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.05);
+    }
+    .dark .projects .project {
+      background: rgba(255,255,255,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #0078d7;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 3;
+    }
+  </style>
 </head>
-<body>
-    <h1>Welcome to My Portfolio!</h1>
-    <p>Hi, I'm <strong>Reka</strong>, an Automation Tester with a passion for improving software quality through efficient test automation strategies and innovative testing tools. I specialize in creating robust test scripts to ensure software reliability and deliver seamless user experiences.</p>
+<body class="light">
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+  <header>
+    <canvas id="wordcloud"></canvas>
+    <h1>Reka</h1>
+    <p>Automation Tester | Test Automation Enthusiast</p>
+  </header>
 
-    <h2>🌟 Connect with Me:</h2>
-    <ul>
-        <li>🔗 <a href="https://www.linkedin.com/in/reka-srimurugan-040296252/" target="_blank">LinkedIn</a></li>
-        <li>🔗 <a href="https://github.com/Rekapost" target="_blank">GitHub</a></li>
-        <li>🔗 <a href="https://rekapost.github.io/https-rekapost.github.io/" target="_blank">Portfolio/Website</a></li>
-    </ul>
+  <div class="container">
+    <section class="skills">
+      <h2>🛠 Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill">Selenium WebDriver</div>
+        <div class="skill">REST Assured</div>
+        <div class="skill">Postman</div>
+        <div class="skill">LambdaTest</div>
+        <div class="skill">Java</div>
+        <div class="skill">Jenkins</div>
+        <div class="skill">Maven</div>
+        <div class="skill">Docker</div>
+        <div class="skill">Kubernetes</div>
+        <div class="skill">AWS</div>
+        <div class="skill">Azure</div>
+        <div class="skill">Extent Reports</div>
+        <div class="skill">Allure Reports</div>
+        <div class="skill">ChainTest Reports</div>
+        <div class="skill">Grafana K6</div>
+        <div class="skill">SonarCloud</div>
+      </div>
+    </section>
 
-    <h2>🛠 Skills & Expertise:</h2>
-    <ul>
-        <li><strong>Test Automation Tools:</strong> Selenium WebDriver, REST Assured, Postman, LambdaTest</li>
-        <li><strong>Programming Languages:</strong> Java</li>
-        <li><strong>API Testing:</strong> Postman, REST Assured, Apidog</li>
-        <li><strong>CI/CD:</strong> Jenkins, Maven, Docker, Kubernetes</li>
-        <li><strong>Cloud Platforms:</strong> AWS, Azure</li>
-        <li><strong>Reporting Tools:</strong> Extent Reports, Allure Reports, ChainTest Reports</li>
-    </ul>
+    <section class="projects">
+      <h2>🚀 Featured Projects</h2>
+      <div class="project">
+        <h3>Banking Domain - ParaBank Test Automation</h3>
+        <p>BDD Cucumber framework for web automation testing. Automated key banking workflows like authentication, account creation, and fund transfers.</p>
+        <a href="https://github.com/Rekapost/ParaBankCucumberBDD">🔗 GitHub: ParaBankCucumberBDD</a>
+      </div>
+      <div class="project">
+        <h3>E-commerce Domain - Amazon Test Automation</h3>
+        <p>TestNG-based automation framework using Selenium WebDriver, integrated with CI/CD pipelines and detailed reporting.</p>
+        <a href="https://github.com/Rekapost/AmazonTestNG">🔗 GitHub: AmazonTestNG</a>
+      </div>
+      <div class="project">
+        <h3>API Test Automation – Google Cloud Healthcare API (FHIR)</h3>
+        <p>API automation framework using RestAssured with OAuth2 authentication and JSON validation.</p>
+        <a href="https://github.com/Rekapost/FHIR-Google-Cloud-API">🔗 GitHub: FHIR Google Cloud API</a>
+      </div>
+    </section>
+  </div>
 
-    <h2>🚀 Featured Projects:</h2>
+  <footer>
+    <p>🌟 Connect with Me:</p>
+    <p>
+      <a href="https://www.linkedin.com/in/reka-srimurugan-040296252/">LinkedIn</a> |
+      <a href="https://github.com/Rekapost">GitHub</a> |
+      <a href="//C:/Users/nreka/Resume/reka_portfolio.html#">Portfolio</a>
+    </p>
+    <p>© 2025 Reka</p>
+  </footer>
 
-    <h3>1️⃣ Banking Domain - ParaBank Test Automation</h3>
-    <ul>
-        <li>🔗 <a href="https://github.com/Rekapost/ParaBankCucumberBDD" target="_blank">GitHub: ParaBankCucumberBDD</a></li>
-        <li> - Developed a <strong>BDD Cucumber</strong> framework for <strong>web automation testing</strong>.</li>
-        <li> - Automated key banking workflows like <strong>user authentication, account creation, and fund transfers</strong> using <strong>Selenium WebDriver</strong>.</li>
-        <li> - Utilized <strong>TestNG</strong> for <strong>parallel execution and reporting</strong>.</li>
-        <li> - Integrated <strong>Allure, Extent, and ChainTest Reports</strong> for comprehensive test insights.</li>
-        <li> - Conducted <strong>performance testing</strong> with <strong>Grafana K6</strong> for load and stress validation.</li>
-        <li> - Configured a <strong>Jenkins CI/CD pipeline</strong> for automated test execution in <strong>Dockerized Selenium Grid</strong>.</li>
-        <li> - Executed tests in <strong>AWS Lambda</strong> for cloud-based automation.</li>
-        <li> - Analyzed <strong>code quality</strong> using <strong>SonarCloud</strong>.</li>
-    </ul>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
+  <script>
+    const canvas = document.getElementById('wordcloud');
+    const words = [
+      ['Selenium', 30], ['REST Assured', 25], ['Postman', 20], ['Java', 28],
+      ['Jenkins', 22], ['Maven', 18], ['Docker', 20], ['Kubernetes', 18],
+      ['AWS', 22], ['Azure', 20], ['CI/CD', 24], ['Test Automation', 26],
+      ['Extent Reports', 18], ['Allure Reports', 18], ['ChainTest Reports', 16],
+      ['Grafana K6', 16], ['SonarCloud', 16], ['API Testing', 22], ['Automation', 26]
+    ];
 
-    <h3>2️⃣ E-commerce Domain - Amazon Test Automation</h3>
-    <ul>
-        <li>🔗 <a href="https://github.com/Rekapost/AmazonTestNG" target="_blank">GitHub: AmazonTestNG</a></li>
-        <li> - Developed a <strong>TestNG-based automation framework</strong> using <strong>Selenium WebDriver</strong> and <strong>Maven</strong>.</li>
-        <li> - Performed <strong>cross-browser and parallel testing</strong> using <strong>Selenium Grid and Docker Selenium Grid</strong>.</li>
-        <li> - Implemented <strong>CI/CD pipelines</strong> with <strong>Jenkins and GitHub Actions</strong> for automated test execution.</li>
-        <li> - Integrated <strong>Allure, Extent, and ChainTest Reports</strong> for detailed test execution insights.</li>
-        <li> - Conducted <strong>performance testing using Grafana K6</strong> for load and stress validation.</li>
-        <li> - Executed test runs in <strong>AWS Lambda</strong> for cloud-based automation.</li>
-        <li> - Maintained <strong>code quality</strong> with <strong>SonarQube static analysis</strong>.</li>
-    </ul>
+    WordCloud(canvas, {
+      list: words,
+      gridSize: 12,
+      weightFactor: 2,
+      fontFamily: 'Segoe UI',
+      color: () => document.body.classList.contains('dark') ? '#66ccff' : '#0078d7',
+      backgroundColor: 'transparent',
+      rotateRatio: 0.5,
+      rotationSteps: 2,
+      shape: 'circle'
+    });
 
-    <h3>3️⃣ API Test Automation – Google Cloud Healthcare API (FHIR)</h3>
-    <ul>
-        <li>🔗 <a href="https://github.com/Rekapost/FHIR-Google-Cloud-API" target="_blank">GitHub: FHIR Google Cloud API</a></li>
-        <li> - Developed an <strong>API automation framework</strong> using <strong>RestAssured</strong> for <strong>Google Cloud Healthcare API (FHIR)</strong>.</li>
-        <li> - Implemented <strong>OAuth2 authentication</strong> to securely interact with API endpoints.</li>
-        <li> - Designed a <strong>custom API framework</strong> to handle <strong>POST, GET, and PATCH requests dynamically</strong>.</li>
-        <li> - Integrated <strong>ExcelReader utility</strong> to fetch API endpoints from external files for better test data management.</li>
-        <li> - Used <strong>JSON validation and assertions</strong> to validate API responses (<strong>status codes, response body</strong>).</li>
-        <li> - Logged and analyzed <strong>API requests/responses</strong> for debugging and reporting.</li>
-    </ul>
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark');
+      body.classList.toggle('light');
+      document.querySelector('.theme-toggle').textContent = body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
 
-    <footer>
-        <p>© 2025 Reka</p>
-    </footer>
+      // regenerate word cloud with updated colors
+      WordCloud(canvas, {
+        list: words,
+        gridSize: 12,
+        weightFactor: 2,
+        fontFamily: 'Segoe UI',
+        color: () => body.classList.contains('dark') ? '#66ccff' : '#0078d7',
+        backgroundColor: 'transparent',
+        rotateRatio: 0.5,
+        rotationSteps: 2,
+        shape: 'circle'
+      });
+    }
+  </script>
 </body>
 </html>
