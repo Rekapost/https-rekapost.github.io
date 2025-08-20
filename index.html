@@ -19,77 +19,50 @@
       background: #121212;
       color: #f9f9f9;
     }
-
-    /* Header Section */
     header {
-      padding: 20px;
-    }
-
-    .header-content {
       display: flex;
-      align-items: stretch;
-      gap: 20px;
-      height: 350px;
-    }
-
-    .photo-container {
-      flex: 0 0 250px;
-      display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
     }
-
-    .profile-photo {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-      border: 4px solid #0078d7;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .header-text {
+    .header-left {
       text-align: center;
-      margin-top: 10px;
     }
-
-    .header-text h1 {
+    .header-left img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .header-left h1 {
       margin: 0;
       font-size: 2rem;
     }
-
-    .header-text p {
-      margin: 5px 0 0 0;
-      font-size: 1rem;
+    .header-left p {
+      margin: 0.3rem 0 0;
+      font-size: 1.2rem;
+      font-style: italic;
     }
-
-    .wordcloud-container {
-      flex: 1;
-      position: relative;
-    }
-
     #wordcloud {
-      width: 100%;
-      height: 100%;
+      width: 250px;   /* same as photo width */
+      height: 250px;  /* same as photo height */
     }
-
-    /* Skills & Projects */
     .container {
       max-width: 1000px;
       margin: auto;
       padding: 2rem;
     }
-
     .skills, .projects {
       margin: 2rem 0;
     }
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
     }
-
     .skill {
       background: rgba(0,0,0,0.05);
       padding: 1rem;
@@ -97,32 +70,26 @@
       text-align: center;
       transition: transform 0.3s;
     }
-
     .dark .skill {
       background: rgba(255,255,255,0.1);
     }
-
     .skill:hover {
       transform: translateY(-5px);
     }
-
     .projects .project {
       margin-bottom: 2rem;
       padding: 1rem;
       border-radius: 10px;
       background: rgba(0,0,0,0.05);
     }
-
     .dark .projects .project {
       background: rgba(255,255,255,0.1);
     }
-
     footer {
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
     }
-
     .theme-toggle {
       position: fixed;
       top: 20px;
@@ -138,26 +105,17 @@
   </style>
 </head>
 <body class="light">
-
   <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
 
-  <!-- Header -->
   <header>
-    <div class="header-content">
-      <div class="photo-container">
-        <img src="profile.jpg" alt="Reka" class="profile-photo">
-        <div class="header-text">
-          <h1>Reka</h1>
-          <p>Automation Tester | Test Automation Enthusiast</p>
-        </div>
-      </div>
-      <div class="wordcloud-container">
-        <canvas id="wordcloud"></canvas>
-      </div>
+    <div class="header-left">
+      <img src="profile.jpg" alt="Reka" id="profile-pic">
+      <h1>Reka</h1>
+      <p>Automation Tester | Test Automation Enthusiast</p>
     </div>
+    <canvas id="wordcloud"></canvas>
   </header>
 
-  <!-- Skills & Projects -->
   <div class="container">
     <section class="skills">
       <h2>🛠 Skills & Expertise</h2>
@@ -186,36 +144,36 @@
       <div class="project">
         <h3>Banking Domain - ParaBank Test Automation</h3>
         <p>BDD Cucumber framework for web automation testing. Automated key banking workflows like authentication, account creation, and fund transfers.</p>
-        <a href="https://github.com/Rekapost/ParaBankCucumberBDD">🔗 GitHub: ParaBankCucumberBDD</a>
+        <a href="#">🔗 GitHub: ParaBankCucumberBDD</a>
       </div>
       <div class="project">
         <h3>E-commerce Domain - Amazon Test Automation</h3>
         <p>TestNG-based automation framework using Selenium WebDriver, integrated with CI/CD pipelines and detailed reporting.</p>
-        <a href="https://github.com/Rekapost/AmazonTestNG">🔗 GitHub: AmazonTestNG</a>
+        <a href="#">🔗 GitHub: AmazonTestNG</a>
       </div>
       <div class="project">
         <h3>API Test Automation – Google Cloud Healthcare API (FHIR)</h3>
         <p>API automation framework using RestAssured with OAuth2 authentication and JSON validation.</p>
-        <a href="https://github.com/Rekapost/FHIR-Google-Cloud-API">🔗 GitHub: FHIR Google Cloud API</a>
+        <a href="#">🔗 GitHub: FHIR Google Cloud API</a>
       </div>
     </section>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>🌟 Connect with Me:</p>
     <p>
-      <a href="https://www.linkedin.com/in/reka-srimurugan-040296252/">LinkedIn</a> |
-      <a href="https://github.com/Rekapost">GitHub</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">GitHub</a> |
       <a href="#">Portfolio</a>
     </p>
     <p>© 2025 Reka</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
   <script>
     const canvas = document.getElementById('wordcloud');
+    const profilePic = document.getElementById('profile-pic');
+
     const words = [
       ['Selenium', 30], ['REST Assured', 25], ['Postman', 20], ['Java', 28],
       ['Jenkins', 22], ['Maven', 18], ['Docker', 20], ['Kubernetes', 18],
@@ -224,37 +182,37 @@
       ['Grafana K6', 16], ['SonarCloud', 16], ['API Testing', 22], ['Automation', 26]
     ];
 
-    WordCloud(canvas, {
-      list: words,
-      gridSize: 12,
-      weightFactor: 2,
-      fontFamily: 'Segoe UI',
-      color: () => document.body.classList.contains('dark') ? '#66ccff' : '#0078d7',
-      backgroundColor: 'transparent',
-      rotateRatio: 0.5,
-      rotationSteps: 2,
-      shape: 'circle'
-    });
+    function resizeWordCloud() {
+      // Match canvas size to photo size
+      canvas.width = profilePic.clientWidth;
+      canvas.height = profilePic.clientHeight;
+      generateWordCloud();
+    }
 
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('dark');
-      body.classList.toggle('light');
-      document.querySelector('.theme-toggle').textContent = body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
-
-      // regenerate word cloud with updated colors
+    function generateWordCloud() {
       WordCloud(canvas, {
         list: words,
         gridSize: 12,
         weightFactor: 2,
         fontFamily: 'Segoe UI',
-        color: () => body.classList.contains('dark') ? '#66ccff' : '#0078d7',
+        color: () => document.body.classList.contains('dark') ? '#66ccff' : '#0078d7',
         backgroundColor: 'transparent',
         rotateRatio: 0.5,
         rotationSteps: 2,
         shape: 'circle'
       });
     }
+
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark');
+      body.classList.toggle('light');
+      document.querySelector('.theme-toggle').textContent = body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+      resizeWordCloud();
+    }
+
+    window.onload = resizeWordCloud;
+    window.onresize = resizeWordCloud;
   </script>
 </body>
 </html>
