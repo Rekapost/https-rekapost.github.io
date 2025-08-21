@@ -19,13 +19,15 @@
       background: #121212;
       color: #f9f9f9;
     }
+
+    /* ===== HEADER ===== */
     header {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
       padding: 2rem;
-      gap: 2rem;
-      flex-wrap: wrap; /* ✅ allows stacking on mobile */
+      gap: 3rem;
+      flex-wrap: wrap; /* ✅ allows stacking on smaller screens */
     }
     .header-left {
       text-align: center;
@@ -48,11 +50,19 @@
       font-size: 1.1rem;
       font-style: italic;
     }
-    #wordcloud {
-      width: 220px;
-      height: 220px;
-      flex: 1 1 220px;
+    .header-right {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+    #wordcloud {
+      width: 100%;
+      max-width: 320px; /* ✅ larger word cloud on big screens */
+      height: 320px;
+    }
+
+    /* ===== CONTENT ===== */
     .container {
       max-width: 1000px;
       margin: auto;
@@ -89,12 +99,16 @@
     .dark .projects .project {
       background: rgba(255,255,255,0.1);
     }
+
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
       font-size: 0.9rem;
     }
+
+    /* ===== THEME TOGGLE ===== */
     .theme-toggle {
       position: fixed;
       top: 20px;
@@ -109,15 +123,19 @@
       font-size: 0.9rem;
     }
 
-    /* ✅ Mobile & Tablet Adjustments */
+    /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         text-align: center;
       }
-      .header-left img, #wordcloud {
+      .header-left img {
         width: 180px;
         height: 180px;
+      }
+      #wordcloud {
+        max-width: 260px;
+        height: 260px;
       }
       .header-left h1 {
         font-size: 1.6rem;
@@ -128,7 +146,7 @@
     }
     @media (max-width: 480px) {
       .skills-grid {
-        grid-template-columns: 1fr; /* ✅ stack skills */
+        grid-template-columns: 1fr;
       }
       .projects .project {
         font-size: 0.95rem;
@@ -145,7 +163,9 @@
       <h1>Reka</h1>
       <p>Automation Tester | Test Automation Enthusiast</p>
     </div>
-    <canvas id="wordcloud"></canvas>
+    <div class="header-right">
+      <canvas id="wordcloud"></canvas>
+    </div>
   </header>
 
   <div class="container">
@@ -201,10 +221,10 @@
     <p>© 2025 Reka</p>
   </footer>
 
+  <!-- Word Cloud Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
   <script>
     const canvas = document.getElementById('wordcloud');
-
     const words = [
       ['Selenium', 30], ['REST Assured', 25], ['Postman', 20], ['Java', 28],
       ['Jenkins', 22], ['Maven', 18], ['Docker', 20], ['Kubernetes', 18],
@@ -213,13 +233,9 @@
       ['Grafana K6', 16], ['SonarCloud', 16], ['API Testing', 22], ['Automation', 26]
     ];
 
-    function resizeWordCloud() {
-      canvas.width = 220;
-      canvas.height = 220;
-      generateWordCloud();
-    }
-
     function generateWordCloud() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
       WordCloud(canvas, {
         list: words,
         gridSize: 12,
@@ -238,11 +254,11 @@
       body.classList.toggle('dark');
       body.classList.toggle('light');
       document.querySelector('.theme-toggle').textContent = body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
-      resizeWordCloud();
+      generateWordCloud();
     }
 
-    window.onload = resizeWordCloud;
-    window.onresize = resizeWordCloud;
+    window.onload = generateWordCloud;
+    window.onresize = generateWordCloud;
   </script>
 </body>
 </html>
